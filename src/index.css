@@ -1107,10 +1107,6 @@
     transition-duration: .5s;
   }
 
-  .paused {
-    animation-play-state: paused;
-  }
-
   @media (hover: hover) {
     .group-hover\:translate-y-0:is(:where(.group):hover *) {
       --tw-translate-y: calc(var(--spacing) * 0);
@@ -1309,6 +1305,25 @@
 
 html {
   font-size: var(--font-size);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  width: fit-content;
+  animation: 20s linear infinite scroll;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
 }
 
 @property --tw-translate-x {
